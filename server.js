@@ -1,7 +1,6 @@
 //Dependencies
 var express = require('express');
-var apiRouting = require('./routing/api-routes');
-var htmlRouting = require('./routing/html-routes');
+
 
 //Setting up Note Taker app
 var app = express();
@@ -13,10 +12,11 @@ var PORT = process.env.PORT || 8080;
 app.use(express.static('public'));
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
-app.use('/api',apiRouting);
-app.use('/',htmlRouting);
+// app.use('/api',apiRouting);
+// app.use('/',htmlRouting);
 
-
+require('./routes/api-routes')(app);
+require('./routes/html-routes')(app);
 
 //LISTENER
 app.listen(PORT,function(){
