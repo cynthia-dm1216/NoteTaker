@@ -1,5 +1,6 @@
 let notes = require('../db/notesData');
 const fs = require('fs');
+var util = require('util');
 
 //random values using uuid
 const { v4: uuidv4 } = require('uuid');
@@ -18,11 +19,11 @@ module.exports = function(app) {
     //creating new notes -- taking in json input and a unique value
     app.post("/api/notes",function (req,res){
         req.body.id = uuidv4();
-        console.log(req.body);
+        // console.log(req.body);
         //adding the new notes into the array 
         notes.push(req.body);
-        console.log(notes);
-        fs.writeFile('../db/db.json',JSON.stringify(notes),
+        // console.log(notes);
+        fs.writeFile('./db/db.json',JSON.stringify(notes),
         function(err){
          if (err) throw err;
         });
@@ -33,7 +34,7 @@ module.exports = function(app) {
  app.delete('/api/notes/:id',function (req,res) {
 //identifying what notes to be deleted
 let findId = (noteObject) => {
-    console.log (noteObject);
+    // console.log (noteObject);
     if (noteObject.id != req.params.id) {
         return true
     }else {
@@ -42,7 +43,7 @@ let findId = (noteObject) => {
 }
 notes = notes.filter(findId);
 //recording new notes
-fs.writeFile('../db/db.json', JSON.stringify(notes),function(err){
+fs.writeFile('./db/db.json', JSON.stringify(notes),function(err){
     if (err) throw err;
 });
 
