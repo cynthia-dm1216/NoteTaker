@@ -2,7 +2,7 @@
 var express = require('express');
 
 //deploy to heroku
-var MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/mongoHeadlines';
+var MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/notetaker';
 
 //connect to Mongo DB
 moongoose.connect(MONGODB_URI);
