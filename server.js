@@ -1,6 +1,11 @@
 //Dependencies
 var express = require('express');
 
+//deploy to heroku
+var MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/mongoHeadlines';
+
+//connect to Mongo DB
+moongoose.connect(MONGODB_URI);
 
 //Setting up Note Taker app
 var app = express();
