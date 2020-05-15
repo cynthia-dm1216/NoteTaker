@@ -26,7 +26,6 @@ module.exports = function(app){
       newNotes
       .getNotes()
       .then(notes => res.json(notes))
-    //   .then(notes => console.log(notes))
       .catch(err => res.status(500).json(err));
     });
 
@@ -36,7 +35,7 @@ module.exports = function(app){
       console.log(req.body);
       newNotes
     //   note.push(req.body);
-      .write(req.body)
+      .addNote(req.body)
       .then(res.status(200).json('New Note was added'))
       .catch(err => res.status(500).json(err));
   });
