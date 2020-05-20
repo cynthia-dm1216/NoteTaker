@@ -1,5 +1,6 @@
 //Dependencies
 var express = require('express');
+var moongoose = require('moongoose');
 
 //deploy to heroku
 var MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/notetaker';
