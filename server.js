@@ -1,7 +1,6 @@
 //Dependencies
 var express = require('express');
 
-
 //Setting up Note Taker app
 var app = express();
 

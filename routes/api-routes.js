@@ -1,24 +1,4 @@
 const newNotes = require('../db/newNotes');
-// const app = require('express').app();
-
-// const util = require('util');
-// const fs = require('fs');
-
-// //random values using uuid
-// const { v4: uuidv4 } = require('uuid');
-
-// const readFileAsync = util.promisify(fs.readFile);
-// const writeFileAsync = util.promisify(fs.writeFile);
-
-//read function
-// function read() {
-//     return readFileAsync('db/notes.json', 'utf8');
-// }
-
-// //write function
-// function write(note) {
-//     return writeFileAsync('./db/db.json',JSON.stringify(note));
-// }
 
 module.exports = function(app){
 //GET
@@ -44,6 +24,7 @@ module.exports = function(app){
 app.delete("/notes/:id", function(req, res) {
     newNotes
       .removeNote(req.params.id)
+      console.log(req.params)
       .then(() => res.json({ ok: true }))
       .catch(err => res.status(500).json(err));
   });
