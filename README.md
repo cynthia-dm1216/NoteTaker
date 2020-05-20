@@ -2,11 +2,10 @@
 
 ## Description
 
-Create an application that can be used to write, save, and delete notes. This application will use an express backend and save and retrieve note data from a JSON file.
+A homework assignmet were a user can write, save, and delete notes. This application will use an express backend and save and retrieve note data from a JSON file.
 
-* The application frontend has already been created, it's your job to build the backend and connect the two.
 
-* The following HTML routes should be created:
+* The following HTML routes were created:
 
   * GET `/notes` - Should return the `notes.html` file.
 
@@ -14,7 +13,7 @@ Create an application that can be used to write, save, and delete notes. This ap
 
 * The application should have a `db.json` file on the backend that will be used to store and retrieve notes using the `fs` module.
 
-* The following API routes should be created:
+* The following API routes were created:
 
   * GET `/api/notes` - Should read the `db.json` file and return all saved notes as JSON.
 
@@ -45,7 +44,7 @@ Application should allow users to delete previously saved notes.
 - - -
 
 ## Application ScreenShot
-![Alt text](./public/assets/ScreenshotsGif/app-Screenshot.png)
+![Alt text](./public/assets/ScreenshotsGif/NoteTaker.gif)
 
  
 
